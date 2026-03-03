@@ -7,20 +7,13 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-400: oklch(70.4% 0.191 22.216);
-    --color-green-400: oklch(79.2% 0.209 151.711);
+    --color-amber-400: oklch(82.8% 0.189 84.429);
     --color-blue-100: oklch(93.2% 0.032 255.585);
-    --color-blue-300: oklch(80.9% 0.105 251.813);
     --color-gray-950: oklch(13% 0.028 261.692);
     --color-white: #fff;
     --spacing: 0.25rem;
-    --text-sm: 0.875rem;
-    --text-sm--line-height: calc(1.25 / 0.875);
     --text-base: 1rem;
     --text-base--line-height: calc(1.5 / 1);
-    --text-lg: 1.125rem;
-    --text-lg--line-height: calc(1.75 / 1.125);
-    --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --radius-lg: 0.5rem;
@@ -185,17 +178,26 @@
   .relative {
     position: relative;
   }
-  .top-\[-5px\] {
-    top: -5px;
+  .top-0 {
+    top: calc(var(--spacing) * 0);
   }
   .top-\[-10px\] {
     top: -10px;
   }
-  .right-\[-5px\] {
-    right: -5px;
+  .top-\[100px\] {
+    top: 100px;
   }
   .right-\[-10px\] {
     right: -10px;
+  }
+  .left-0 {
+    left: calc(var(--spacing) * 0);
+  }
+  .left-\[-100\%\] {
+    left: -100%;
+  }
+  .left-\[0\] {
+    left: 0;
   }
   .container {
     width: 100%;
@@ -221,8 +223,14 @@
   .mx-auto {
     margin-inline: auto;
   }
+  .block {
+    display: block;
+  }
   .flex {
     display: flex;
+  }
+  .grid {
+    display: grid;
   }
   .hidden {
     display: none;
@@ -230,23 +238,14 @@
   .table {
     display: table;
   }
-  .h-\[10px\] {
-    height: 10px;
-  }
-  .h-\[20px\] {
-    height: 20px;
-  }
   .h-\[25px\] {
     height: 25px;
   }
   .h-\[30px\] {
     height: 30px;
   }
-  .w-\[10px\] {
-    width: 10px;
-  }
-  .w-\[20px\] {
-    width: 20px;
+  .h-full {
+    height: 100%;
   }
   .w-\[25px\] {
     width: 25px;
@@ -254,11 +253,29 @@
   .w-\[30px\] {
     width: 30px;
   }
+  .w-\[100\%\] {
+    width: 100%;
+  }
+  .w-\[250px\] {
+    width: 250px;
+  }
+  .w-full {
+    width: 100%;
+  }
   .border-collapse {
     border-collapse: collapse;
   }
+  .cursor-pointer {
+    cursor: pointer;
+  }
   .resize {
     resize: both;
+  }
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .flex-col {
+    flex-direction: column;
   }
   .items-center {
     align-items: center;
@@ -269,8 +286,8 @@
   .justify-center {
     justify-content: center;
   }
-  .gap-2 {
-    gap: calc(var(--spacing) * 2);
+  .justify-end {
+    justify-content: flex-end;
   }
   .gap-3 {
     gap: calc(var(--spacing) * 3);
@@ -285,14 +302,17 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
-  .bg-\[\#5f6c13\] {
-    background-color: #5f6c13;
-  }
   .bg-\[\#f56c13\] {
     background-color: #f56c13;
   }
-  .bg-green-400 {
-    background-color: var(--color-green-400);
+  .bg-\[rgba\(0\,0\,0\,0\.5\)\] {
+    background-color: rgba(0,0,0,0.5);
+  }
+  .bg-\[rgba\(0\,0\,0\,0\.9\)\] {
+    background-color: rgba(0,0,0,0.9);
+  }
+  .bg-amber-400 {
+    background-color: var(--color-amber-400);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -303,14 +323,23 @@
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
   }
+  .px-5 {
+    padding-inline: calc(var(--spacing) * 5);
+  }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
   }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
   }
-  .py-4 {
-    padding-block: calc(var(--spacing) * 4);
+  .py-5 {
+    padding-block: calc(var(--spacing) * 5);
+  }
+  .pt-5 {
+    padding-top: calc(var(--spacing) * 5);
+  }
+  .pt-10 {
+    padding-top: calc(var(--spacing) * 10);
   }
   .text-center {
     text-align: center;
@@ -319,42 +348,18 @@
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
   }
-  .text-lg {
-    font-size: var(--text-lg);
-    line-height: var(--tw-leading, var(--text-lg--line-height));
-  }
-  .text-sm {
-    font-size: var(--text-sm);
-    line-height: var(--tw-leading, var(--text-sm--line-height));
-  }
-  .text-\[10px\] {
-    font-size: 10px;
-  }
   .text-\[11px\] {
     font-size: 11px;
-  }
-  .text-\[13px\] {
-    font-size: 13px;
   }
   .text-\[14px\] {
     font-size: 14px;
   }
-  .text-\[16px\] {
-    font-size: 16px;
-  }
   .text-\[20px\] {
     font-size: 20px;
-  }
-  .text-\[30px\] {
-    font-size: 30px;
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
-  }
-  .font-medium {
-    --tw-font-weight: var(--font-weight-medium);
-    font-weight: var(--font-weight-medium);
   }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
@@ -378,17 +383,15 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
   .hover\:bg-blue-100 {
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-blue-100);
-      }
-    }
-  }
-  .hover\:bg-blue-300 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-blue-300);
       }
     }
   }
@@ -404,6 +407,16 @@
       display: block;
     }
   }
+  .md\:hidden {
+    @media (width >= 48rem) {
+      display: none;
+    }
+  }
+  .md\:grid-cols-2 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
   .md\:py-5 {
     @media (width >= 48rem) {
       padding-block: calc(var(--spacing) * 5);
@@ -414,11 +427,6 @@
       font-size: 30px;
     }
   }
-  .md\:text-\[40px\] {
-    @media (width >= 48rem) {
-      font-size: 40px;
-    }
-  }
   .lg\:text-\[16px\] {
     @media (width >= 64rem) {
       font-size: 16px;
@@ -427,16 +435,6 @@
   .lg\:text-\[35px\] {
     @media (width >= 64rem) {
       font-size: 35px;
-    }
-  }
-  .lg\:text-\[50px\] {
-    @media (width >= 64rem) {
-      font-size: 50px;
-    }
-  }
-  .lg\:text-\[350px\] {
-    @media (width >= 64rem) {
-      font-size: 350px;
     }
   }
 }

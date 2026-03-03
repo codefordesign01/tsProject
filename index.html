@@ -10,7 +10,7 @@
 <body>
  
   <!-- top bar -->
-   <div class="bg-[#f56c13] py-2 md:block hidden ">
+   <div class="bg-[#f56c13] py-2 ">
      <div class="container mx-auto px-4">
       <p class="text-white text-center text-[14px] lg:text-[16px] font-semibold">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, doloremque.
@@ -19,10 +19,12 @@
    </div>
    
    <!-- mavbar -->
-    <div class="bg-white py-3 md:py-5">
+    <div class="bg-white py-3 md:py-5 ">
      <div class="container mx-auto px-4">
       <div class="flex justify-between items-center">
-
+        <button class="block md:hidden" onclick="openSidebar()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
         <!-- lgog -->
         <div>
          <a href="" class="text-gray-950 font-bold text-[20px] md:text-[30px] lg:text-[35px]">
@@ -30,7 +32,7 @@
          </a>
         </div>
         <!-- menu -->
-        <div>
+        <div class="hidden md:block">
          <ul class="m-0 p-0 flex gap-3">
           <li>
            <a href="" class="text-gray-950 text-base font-semibold hover:text-[#f56c13]">Shop</a>
@@ -50,7 +52,7 @@
          </ul>
         </div>
         <!-- icons -->
-        <div>
+        <div class="">
          <ul class="m-0 p-0 flex gap-3">
           <li>
            <a href="" class="w-[30px] h-[30px] rounded-lg flex justify-center items-center transition hover:bg-blue-100">
@@ -62,7 +64,7 @@
             <i class="fa-solid fa-moon text-gray-950"></i>
            </a>
           </li>
-          <li>
+          <li class="hidden md:block">
            <a href=""  class="w-[30px] h-[30px] rounded-lg flex justify-center items-center transition hover:bg-blue-100">
             <i class="fa-regular fa-heart text-gray-950"></i>
            </a>
@@ -78,9 +80,57 @@
          </ul>
         </div>
 
+        <div id="linear" onclick="closeSidebar()" class="absolute top-0 left-[-100%] bg-[rgba(0,0,0,0.9)] w-full h-full"></div>
       </div>
      </div>
     </div>
- 
+    <div id="sidebar" class="bg-amber-400    w-[100%]  transition transition-all px-5 py-5" style="display: none;" >
+          <div class="flex justify-end">
+            <button class="cursor-pointer" onclick="closeSidebar()">
+              <i class="fa-solid fa-x"></i>
+            </button>
+            
+          </div>
+          <div>
+              <ul class="m-0 p-0 flex gap-3 text-center flex-col">
+                <li>
+                <a href="" class="text-gray-950 text-base font-semibold hover:text-[#f56c13]">Shop</a>
+                </li>
+                <li>
+                <a href="" class="text-gray-950 text-base font-semibold hover:text-[#f56c13]">Category</a>
+                </li>
+                <li>
+                <a href="" class="text-gray-950 text-base font-semibold hover:text-[#f56c13]">New Arival</a>
+                </li>
+                <li>
+                <a href="" class="text-gray-950 text-base font-semibold hover:text-[#f56c13]">Sale</a>
+                </li>
+                <li>
+                <a href="" class="text-gray-950 text-base font-semibold hover:text-[#f56c13]">About</a>
+                </li>
+              </ul>
+            </div>
+    </div>
+
+    <section class="">
+      <div class="grid grid-cols-1 md:grid-cols-2 ">
+        <div>
+          data
+        </div>
+        <div>
+          image
+        </div>
+      </div>
+      <h1>Banner section</h1>
+    </section>
+    
+    <script>
+      function openSidebar() {
+        document.getElementById("sidebar").style.display = "block";     
+      }
+      function closeSidebar() {
+        document.getElementById("sidebar").style.display = "none";
+      }
+    </script>
 </body>
 </html>
