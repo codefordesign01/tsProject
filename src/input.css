@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+body{
+ font-family: "Inter", sans-serif;
+}
+h1,h2,h3{
+  font-family: "Outfit", sans-serif;
+}
+.myanimation{
+ animation-name: bannerANimtaion;
+ animation-duration:3s;
+ animation-iteration-count: infinite;
+ animation-timing-function: linear;
+ 
+}
+@keyframes bannerANimtaion {
+ 0%{transform: translateY(20px);}
+ 50%{transform: translateY(0px);}
+ 100%{transform: translateY(20px);}
+}

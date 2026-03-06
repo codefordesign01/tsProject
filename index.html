@@ -4,6 +4,9 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Document</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="src/output.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -112,17 +115,56 @@
             </div>
     </div>
 
-    <section class="">
-      <div class="grid grid-cols-1 md:grid-cols-2 ">
-        <div>
-          data
-        </div>
-        <div>
-          image
+    <!-- banner -->
+    <section class="bg-[#080f1d] py-10 md:py-24 relative">
+      <div class="absolute bottom-[10px] left-[50%]">
+        <p class="text-white">Explore</p>
+      </div>
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <div>
+            <span class="">
+              New Collection 2032
+            </span>
+            <h1>lorem text</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, officia?</p>
+            <div class="flex flex-col md:flex-row gap-3">
+              <button class="rounded-4xl border py-3 px-10 border-white text-white hover:bg-white hover:text-black">Click here</button>
+              <button class="rounded-4xl border py-3 px-10 border-white text-white hover:bg-white hover:text-black">REad more</button>
+            </div>
+          </div>
+          <div>
+            <div class="relative">
+              <img src="./media/banner.jpg" class="max-w-full h-auto myanimation"  style="rotate: -5deg;" />
+              <div class="w-[200px] bg-[rgba(255,255,255,0.3)] px-4 py-5 backdrop-blur-lg rounded-2xl absolute top-[20%] left-[-20px]">
+                <p class="text-white">Lorem ipsum dolor sit amet.</p>
+              </div>
+              <div class="w-[200px] bg-[rgba(255,255,255,0.3)] px-4 py-5 backdrop-blur-lg rounded-2xl absolute top-[70%] right-[-20px]">
+                <p class="text-white">Lorem ipsum dolor sit amet.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <h1>Banner section</h1>
     </section>
+
+    <section class="py-24">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div class="border p-4 rounded shadow">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam repellat pariatur omnis, illo autem similique, ipsam commodi quas aperiam enim neque modi soluta. Nulla sit vel nemo laborum doloribus porro.
+          </div>
+          <div class="border p-4 rounded shadow">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam repellat pariatur omnis, illo autem similique, ipsam commodi quas aperiam enim neque modi soluta. Nulla sit vel nemo laborum doloribus porro.
+          </div>
+          <div class="border p-4 rounded shadow">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam repellat pariatur omnis, illo autem similique, ipsam commodi quas aperiam enim neque modi soluta. Nulla sit vel nemo laborum doloribus porro.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
     
     <script>
       function openSidebar() {
